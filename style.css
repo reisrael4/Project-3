@@ -4,3 +4,7 @@
 body{
     background: #F8E6BF;
 }
+form{
+    display: flex;
+    justify-content: center;
+}
