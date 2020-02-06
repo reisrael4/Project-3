@@ -2,21 +2,27 @@ let pyramid = document.querySelector('.pyramid');
 let url = 'http://ron-swanson-quotes.herokuapp.com/v2/quotes';
 let searchUrl = 'https://ron-swanson-quotes.herokuapp.com/v2/quotes/search/';
 let search = document.querySelector('form');
+let modal = document.querySelector('.modal');
+let close = document.querySelector('.close-button');
+let modalContent = document.querySelector('.modal-content');
+// close.addEventListener('click', closeModal);
+// function closeModal(e){
+//     e.preventDefault();
+//     if(e.target == window){
+//     modal.style.display = 'none';
+//     }
+// }
 for (let i=0; i<45; i++){
     let subject = document.createElement('div');
-    let modal = document.createElement('div');
-    let close = document.createElement('span');
-    close.innerHTML = "&times;";
-    let modalContent = document.createElement('p');
-    modalContent.classList.add('modal-content')
-    close.classList.add('close-button');
-    modal.classList.add('modal');
     subject.classList.add('pyramid-subject');
     subject.addEventListener('click', respond);
-    close.addEventListener('click', closeModal)
     function respond(e){
         e.preventDefault();
-        modal.style.display = 'block';
+        if(e.target == subject){ 
+            modal.style.display = 'block';
+        } else{
+            modal.style.display = 'none';
+        }
         fetch(url)
             .then(res=>{
                 return res.json();
@@ -27,14 +33,10 @@ for (let i=0; i<45; i++){
         })
         // console.log('This is an excellent rectangle!')
     }
-    function closeModal(e){
-        e.preventDefault();
-        modal.style.display = 'none';
-    }
     pyramid.appendChild(subject);
     subject.appendChild(modal);
-    modal.appendChild(modalContent);
-    modal.appendChild(close);
+    // modal.appendChild(modalContent);
+    // modal.appendChild(close);
 };
 search.addEventListener('submit', searchQuote);
 function searchQuote(e){
