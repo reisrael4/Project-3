@@ -3,6 +3,9 @@
 }
 body{
     background: #F8E6BF;
+    background-image: url(https://imgur.com/Oag6FHC);
+    background-size: cover;
+    background-position: center;
 }
 form{
     display: flex;
@@ -14,6 +17,7 @@ form{
     flex-wrap: nowrap;
     justify-content: space-between;
     align-content: center;
+    margin: 0;
 }
 .rows{
     display: flex;
@@ -21,11 +25,12 @@ form{
     flex-wrap: nowrap;
     align-content: center;
     justify-content: center;
-    margin: 0 auto;
+    margin-bottom: 0;
+    margin-top: 0;
 }
 .pyramid-subject{
-    height: 100px;
-    width: 120px;
+    height: 80px;
+    width: 100px;
     /* background-color: gray; */
     background-image: url(https://i.imgur.com/I0pHVAJ.jpg);
     background-size: contain;
@@ -52,6 +57,7 @@ form{
     padding: 20px;
     border: 1px solid #888888;
     width: 80%;
+    background-image: url(https://i.imgur.com/GODm18w.mp4) 0 0;
 }
 .close-button{
     color: #aaaaaa;
