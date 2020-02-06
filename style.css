@@ -8,3 +8,17 @@ form{
     display: flex;
     justify-content: center;
 }
+.pyramid{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+}
+.pyramid-subject{
+    height: 100px;
+    width: 120px;
+    background-color: gray;
+    margin: 20px 15px;
+    border: 5px solid #7B232E;
+}

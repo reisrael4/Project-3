@@ -4,16 +4,7 @@ let searchUrl = 'https://ron-swanson-quotes.herokuapp.com/v2/quotes/search/';
 let search = document.querySelector('form');
 for (let i=0; i<45; i++){
     let subject = document.createElement('div');
-    subject.style.height = '100px';
-    subject.style.width = '120px';
-    subject.style.backgroundColor = 'grey';
-    pyramid.style.display = 'flex';
-    pyramid.style.flexDirection = 'row';
-    pyramid.style.flexWrap = 'wrap';
-    pyramid.style.justifyContent = 'space-between';
-    pyramid.style.alignContent = 'center';
-    subject.style.margin = '20px 15px';
-    subject.style.border = '5px solid #7B232E'
+    subject.classList.add('pyramid-subject')
     subject.addEventListener('click', respond)
     function respond(e){
         e.preventDefault();
@@ -22,10 +13,10 @@ for (let i=0; i<45; i++){
                 return res.json();
             })
             .then(res=>{
-            console.log('Bully for you!')
+            // console.log('Bully for you!')
             console.log(res[0]);
         })
-        console.log('This is an excellent rectangle!')
+        // console.log('This is an excellent rectangle!')
     }
     pyramid.appendChild(subject);
 }
