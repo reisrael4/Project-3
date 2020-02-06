@@ -33,6 +33,9 @@ for (let i=1; i<=9; i++){
                 modal.style.display = 'none';
             }
         }
+        for(let x=0; x<i; x++){
+            subject.style.backgroundImage = backgrounds[x];
+        }
         let row = document.querySelector(`.row-${i}`)
         row.appendChild(subject);
         }
