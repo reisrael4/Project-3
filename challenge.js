@@ -5,29 +5,37 @@ let search = document.querySelector('form');
 let modal = document.querySelector('.modal');
 let close = document.querySelector('.close-button');
 let modalContent = document.querySelector('.modal-content');
-for (let i=0; i<45; i++){
-    let subject = document.createElement('div');
-    subject.classList.add('pyramid-subject');
-    subject.addEventListener('click', respond);
-    function respond(e){
-        e.preventDefault();
-        if(e.target == subject){ 
-            modal.style.display = 'block';
-        } else{
-            modal.style.display = 'none';
+let backgrounds = ["https://i.imgur.com/I0pHVAJ.jpg", "https://i.imgur.com/qZ2W3WL.jpg"];
+for (let i=1; i<=9; i++){
+    for(let j=1; j<=i; j++){
+        let subject = document.createElement('div');
+        subject.classList.add('pyramid-subject');
+        subject.addEventListener('click', respond);
+        close.addEventListener('click', closeModal)
+        function respond(e){
+            e.preventDefault();
+            if(e.target == subject){ 
+                modal.style.display = 'block';
+            } 
+            fetch(url)
+                .then(res=>{
+                    return res.json();
+                })
+                .then(res=>{
+                // console.log('Bully for you!')
+                modalContent.innerText = res[0];
+                })
+            // console.log('This is an excellent rectangle!')
+            }
+        function closeModal(e){
+            e.preventDefault();
+            if(e.target == close){
+                modal.style.display = 'none';
+            }
         }
-        fetch(url)
-            .then(res=>{
-                return res.json();
-            })
-            .then(res=>{
-            // console.log('Bully for you!')
-            modalContent.innerText = res[0];
-        })
-        // console.log('This is an excellent rectangle!')
-    }
-    pyramid.appendChild(subject);
-    subject.appendChild(modal);
+        let row = document.querySelector(`.row-${i}`)
+        row.appendChild(subject);
+        }
 };
 search.addEventListener('submit', searchQuote);
 function searchQuote(e){

@@ -10,10 +10,18 @@ form{
 }
 .pyramid{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: space-between;
     align-content: center;
+}
+.rows{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 .pyramid-subject{
     height: 100px;
