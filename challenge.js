@@ -5,13 +5,6 @@ let search = document.querySelector('form');
 let modal = document.querySelector('.modal');
 let close = document.querySelector('.close-button');
 let modalContent = document.querySelector('.modal-content');
-// close.addEventListener('click', closeModal);
-// function closeModal(e){
-//     e.preventDefault();
-//     if(e.target == window){
-//     modal.style.display = 'none';
-//     }
-// }
 for (let i=0; i<45; i++){
     let subject = document.createElement('div');
     subject.classList.add('pyramid-subject');
@@ -35,21 +28,23 @@ for (let i=0; i<45; i++){
     }
     pyramid.appendChild(subject);
     subject.appendChild(modal);
-    // modal.appendChild(modalContent);
-    // modal.appendChild(close);
 };
 search.addEventListener('submit', searchQuote);
 function searchQuote(e){
     e.preventDefault();
     let input = document.querySelector('.input');
     let searchValue = input.value;
-    console.log(searchValue);
     let quoteUrl = searchUrl + searchValue;
+    if(e.target == search){ 
+        modal.style.display = 'block';
+    } else{
+        modal.style.display = 'none';
+    }
     fetch(quoteUrl)
     .then(res=>{
         return res.json();
     })
     .then(res=>{
-        console.log(res[0]);
+        modalContent.innerText = res[0];
     })
 }
