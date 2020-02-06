@@ -12,7 +12,7 @@ for (let i=0; i<45; i++){
     subject.style.margin = '20px 15px';
     subject.addEventListener('click', respond)
     function respond(){
-        console.log('Huzzah!')
+        console.log('This is an excellent rectangle!')
     }
     pyramid.appendChild(subject);
 }
