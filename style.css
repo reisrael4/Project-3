@@ -50,12 +50,14 @@ form{
     overflow: auto;
     background-color: black;
     background-color: rgba(0, 0, 0, 0.4);
-    /* animation: unfoldIn 5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-    animation: scaleUp 5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards; */
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-name: slideIn;
     text-align: center;
     align-content: center;
+}
+.modal-close{
+    animation-duration: 1s;
+    animation-name: slideOutLeft;
 }
 .modal-content{
     background-color: #fefefe;
@@ -86,6 +88,16 @@ form{
       margin-left: 0%;
       width: 100%;
     }
+  }
+  @keyframes slideOutLeft{
+      from{
+          margin-left: 0%;
+          width: 100%;
+      }
+      to{
+          margin-left: 100%;
+          width: 100%;
+      }
   }
 @media screen and (max-width: 576px){
     .small-row{

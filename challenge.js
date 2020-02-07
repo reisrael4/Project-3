@@ -28,6 +28,7 @@ for (let i=1; i<=9; i++){
             }
         function closeModal(e){
             e.preventDefault();
+            modal.classList.add('modal-close');
             if(e.target == close){
                 modal.style.display = 'none';
             }
@@ -36,21 +37,21 @@ for (let i=1; i<=9; i++){
         row.appendChild(subject);
         }
         search.addEventListener('submit', searchQuote);
-function searchQuote(e){
-    e.preventDefault();
-    let input = document.querySelector('.input');
-    let searchValue = input.value;
-    let quoteUrl = searchUrl+searchValue;
-    fetch(quoteUrl).then(res=>{
-        return res.json();
-    })
-    .then(res=>{
-        modalContent.innerText = res[0];
-    })
-    if(e.target == search){ 
-        modal.style.display = 'block';
-    } else{
-        modal.style.display = 'none';
-    }
+        function searchQuote(e){
+            e.preventDefault();
+            let input = document.querySelector('.input');
+            let searchValue = input.value;
+            let quoteUrl = searchUrl+searchValue;
+            fetch(quoteUrl).then(res=>{
+                return res.json();
+            })
+            .then(res=>{
+                modalContent.innerText = res[0];
+            })
+            if(e.target == search){ 
+                modal.style.display = 'block';
+            } else{
+                modal.style.display = 'none';
+            }
 }
 };
