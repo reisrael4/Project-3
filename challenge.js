@@ -1,5 +1,5 @@
 let pyramid = document.querySelector('.pyramid');
-let url = 'http://ron-swanson-quotes.herokuapp.com/v2/quotes';
+let url = 'https://ron-swanson-quotes.herokuapp.com/v2/quotes';
 let searchUrl = 'https://ron-swanson-quotes.herokuapp.com/v2/quotes/search/';
 let search = document.querySelector('form');
 let modal = document.querySelector('.modal');
@@ -29,9 +29,10 @@ for (let i=1; i<=9; i++){
         function closeModal(e){
             e.preventDefault();
             //Something with the display is causing the animation to not work.
+            modal.classList.add('modal-close');
             if(e.target == close){
-                modal.classList.add('modal-close');
-                modal.style.display = 'none';
+                
+                // modal.style.display = 'none';
             }
         }
         let row = document.querySelector(`.row-${i}`);
