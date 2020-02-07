@@ -5,7 +5,6 @@ let search = document.querySelector('form');
 let modal = document.querySelector('.modal');
 let close = document.querySelector('.close-button');
 let modalContent = document.querySelector('.modal-content');
-// let backgrounds = ["https://i.imgur.com/I0pHVAJ.jpg", "https://i.imgur.com/qZ2W3WL.jpg"];
 for (let i=1; i<=9; i++){
     for(let j=1; j<=i; j++){
         let subject = document.createElement('div');
@@ -42,10 +41,11 @@ function searchQuote(e){
     e.preventDefault();
     let input = document.querySelector('.input');
     let searchValue = input.value;
-    let quoteUrl = searchUrl + searchValue;
+    let quoteUrl = searchUrl+searchValue;
     if(e.target == search){ 
         modal.style.display = 'block';
-    } else{
+    } 
+    if(e.target == close){
         modal.style.display = 'none';
     }
     fetch(quoteUrl)
