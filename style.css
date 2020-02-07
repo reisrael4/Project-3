@@ -55,6 +55,9 @@ form{
     text-align: center;
     align-content: center;
 }
+.modalOpen{
+    display: block;
+}
 .modal-close{
     animation-duration: 1s;
     animation-name: slideOutLeft;
