@@ -5,7 +5,7 @@ let search = document.querySelector('form');
 let modal = document.querySelector('.modal');
 let close = document.querySelector('.close-button');
 let modalContent = document.querySelector('.modal-content');
-for (let i=1; i<=9; i++){
+for (let i=1; i<=5; i++){
     for(let j=1; j<=i; j++){
         let subject = document.createElement('div');
         subject.classList.add('pyramid-subject');

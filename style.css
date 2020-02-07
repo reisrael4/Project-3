@@ -64,10 +64,13 @@ form{
 }
 .modal-content{
     background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
+    margin: 15% auto 0 auto;
+    padding: 50px;
     border: 1px solid #888888;
     width: 50%;
+}
+.modal-img{
+    margin: auto 0;
 }
 .close-button{
     color: #aaaaaa;
