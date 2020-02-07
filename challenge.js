@@ -29,6 +29,7 @@ for (let i=1; i<=9; i++){
         function closeModal(e){
             e.preventDefault();
             modal.classList.add('modal-close');
+            //Something with the display is causing the animation to not work. Nest the fucntions!
             if(e.target == close){
                 modal.style.display = 'none';
             }
