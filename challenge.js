@@ -55,22 +55,3 @@ function searchQuote(e){
     }
 }
 };
-// search.addEventListener('submit', searchQuote);
-// function searchQuote(e){
-//     e.preventDefault();
-//     let input = document.querySelector('.input');
-//     let searchValue = input.value;
-//     let quoteUrl = searchUrl+searchValue;
-//     fetch(quoteUrl).then(res=>{
-//         return res.json();
-//     })
-//     .then(res=>{
-//         modalContent.innerText = res[0];
-//     })
-//     if(e.target == search){ 
-//         modal.style.display = 'block';
-//     } 
-//     if(e.target == close){
-//         modal.style.display = 'none';
-//     }
-// }
