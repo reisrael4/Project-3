@@ -30,9 +30,12 @@ for (let i=1; i<=9; i++){
             e.preventDefault();
             //Something with the display is causing the animation to not work.
             modal.classList.add('modal-close');
-            if(e.target == close){
-                
-                // modal.style.display = 'none';
+            modal.addEventListener('animationend', modalClose);
+            function modalClose(e){
+                console.log('modal closed!')
+                if(e.target == close){
+                    modal.style.display = 'none';
+                }
             }
         }
         let row = document.querySelector(`.row-${i}`);
