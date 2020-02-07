@@ -72,21 +72,10 @@ form{
     cursor: pointer;
 }
 @media screen and (max-width: 576px){
-    .excellent-rectangle{
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        align-content: center;
+    .small-row{
+        display: none;
     }
-    /* .small-row{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        align-content: center;
-    } */
-    .rectangleTitle{
-        content: "This is an Excellent Rectangle";
+    .small-body{
+        background-image: none;
     }
 }
