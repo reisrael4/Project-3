@@ -49,8 +49,7 @@ function searchQuote(e){
     })
     if(e.target == search){ 
         modal.style.display = 'block';
-    } 
-    if(e.target == close){
+    } else{
         modal.style.display = 'none';
     }
 }
